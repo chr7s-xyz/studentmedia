@@ -1,0 +1,78 @@
+@import "style.css";
+
+#register-section{
+    min-height: 30rem;
+    width: 100%;
+    background-color: var(--black1);
+color :var(--green1);
+    display: flex;
+    justify-content: center;
+}
+#register-div{
+    width: 70%;
+    border: 2px solid var(--green1);
+    display: flex;
+    column-gap: 0.3rem;
+    
+}
+#register-photo{
+    height: 100%;
+    width: 100%;
+}
+#register-photo>img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#register-form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#register-form-title{
+    line-height: 5rem;
+}
+#register-form-data{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.register-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+#register-submit{
+    margin: 2rem 0;
+}
+#register-submit>input{
+    padding: 2rem 4rem;
+    font-size: 1.2rem;
+    background-color: var(--green1);
+    color: var(--black1);
+}
+.register-label{
+    font-size: 1.2rem;
+}
+.register-input{
+    font-size: 1.5rem;
+    background-color: var(--black1);
+    border: 1px solid var(--color1);
+    color: var(--green1);
+    padding: 0.3rem 0;
+}
+
+@media (min-width:0px) and (max-width:885px) {
+   #register-photo{
+    display: none;
+   }
+   #register-div{
+    width: 100%;
+   }
+ }
