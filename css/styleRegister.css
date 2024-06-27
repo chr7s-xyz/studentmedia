@@ -1,9 +1,12 @@
 @import "style.css";
+body{
+    background-image: linear-gradient(var(--green1),var(--black1))
 
+}
 #register-section{
     min-height: 30rem;
     width: 100%;
-    background-color: var(--black1);
+    background-color: linear-gradient(to left,var(--green1),var(--black1));
 color :var(--green1);
     display: flex;
     justify-content: center;

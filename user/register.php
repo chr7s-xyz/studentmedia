@@ -1,3 +1,11 @@
+<?php
+include($_SERVER['DOCUMENT_ROOT'].'/studentmedia/php/function.php');
+registerForm();
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +25,11 @@
             <div id="register-form">
                 <div id="register-form-title">REGISTER</div>
                 <div id="register-form-data">
-                    <form action="" method="post">
+                    <form action="../php/form.php?register" method="post" enctype="multipart/form-data">
                         <div class="username-div register-div">
                             <label for="username" class="register-label">Enter your Username :</label>
                             <input type="text" id="username" class="register-input" name="username" autocomplete="off"
-                                required />
+                                required value="<?php ?>"/>
                         </div>
 
                         <div class="name-div register-div">
@@ -79,6 +87,9 @@
             </div>
         </div>
     </div>
+
+
+    <script src="../js/index.js"></script>
 </body>
 
 </html>
