@@ -1,21 +1,24 @@
 @import "style.css";
 body{
-    background-image: linear-gradient(var(--green1),var(--black1))
+    background-color: black
 
 }
 #register-section{
     min-height: 30rem;
     width: 100%;
-    background-color: linear-gradient(to left,var(--green1),var(--black1));
+    background-color:black;
 color :var(--green1);
     display: flex;
     justify-content: center;
 }
 #register-div{
-    width: 70%;
+    width: 80%;
+   min-width: fit-content;
     border: 2px solid var(--green1);
     display: flex;
+    flex-direction: column;
     column-gap: 0.3rem;
+    margin-top: 3rem;
     
 }
 #register-photo{
@@ -33,8 +36,14 @@ color :var(--green1);
     display: flex;
     flex-direction: column;
 }
+form{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
 #register-form-title{
     line-height: 5rem;
+    margin-left: 2rem;
 }
 #register-form-data{
     height: 100%;
@@ -46,18 +55,32 @@ color :var(--green1);
 }
 .register-div{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
     padding-bottom: 1rem;
 }
-
-#register-submit{
+#color-icon{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: black;
+    margin-right: 0.1rem;
+}
+#register-submit,#register-reset{
     margin: 2rem 0;
 }
-#register-submit>input{
-    padding: 2rem 4rem;
+#register-submit>input,#register-reset>input{
+    height: 4rem;
+    width: 9rem;
     font-size: 1.2rem;
+}
+#register-submit>input{
+   
     background-color: var(--green1);
+    color: var(--black1);
+}
+#register-reset>input{
+    background-color: red;
     color: var(--black1);
 }
 .register-label{
@@ -70,12 +93,69 @@ color :var(--green1);
     color: var(--green1);
     padding: 0.3rem 0;
 }
+#action-div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.action-inputs{
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+   
+}
+.password-inside{
+    display: flex;
+}
+.idcard-inside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+input::placeholder{
+    font-size: 0.8rem;
+    padding-left: 4px;
+    color: green;
 
-@media (min-width:0px) and (max-width:885px) {
-   #register-photo{
-    display: none;
-   }
-   #register-div{
+}
+@media (min-width:411px) and (max-width:815px) {
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-div2{
+    margin-right: 3.4rem;
+  }
+  .action-inputs{
     width: 100%;
-   }
+  }
+  .redirect-login{
+    margin-left: 1rem;
+  }
+ }
+
+ @media (min-width:0px) and (max-width:410px){
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    #register-div{
+        border: 0;
+    }
+    .register-input{
+        font-size: 1.2rem;
+    }
+    #form-div2{
+        margin-right: 2.4rem;
+      }
+      .action-inputs{
+        width: 100%;
+      }
+      .redirect-login{
+        margin-left: 1rem;
+      }
  }
