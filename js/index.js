@@ -20,10 +20,13 @@ function togglePassword2(){
 
 
 // HANDLING MENU ICON
-let menu = document.getElementById('menu-div')
+// adjusting main content when sidebar is closed
+function menuAdjust(){
+    let menu = document.getElementById('menu-div')
 let sidebar = document.getElementById('sidebar')
 let menuIcon = document.getElementById('menu-icon')
 
+let postdiv=document.getElementsByClassName('post-div')
 menu.addEventListener("click", () => {
     if (sidebar.style.opacity == 0) {
         sidebar.style.opacity = 1;
@@ -31,7 +34,27 @@ menu.addEventListener("click", () => {
     } else {
         sidebar.style.opacity = 0;
         menuIcon.innerHTML = "menu"
+        sidebar.style.display = "none";
     }
 
 })
+}
 
+
+
+///closing popup
+function popupClose(){
+    let popup=document.getElementById('error')
+    let close=document.getElementById('closePopup')
+    console.log(popup)
+    console.log(close)
+    close.addEventListener("click",()=>{
+        console.log("closedd")
+        popup.style.display="none";
+        popup.style.zindex="-1";
+    })
+}
+    
+
+//  handling login errors
+ 

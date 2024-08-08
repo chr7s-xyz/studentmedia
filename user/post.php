@@ -45,6 +45,7 @@
     <div id="posts">
         <h2>POSTS</h2>
         <div id="create-post">
+            <h2>Create your own post</h2>
             <form action='' method='post'>
                 <input type='search' name='searchData' class='searchInput' />
                 <span class='material-symbols-outlined post-icon'>send</span>
@@ -85,9 +86,11 @@
                 <div class="postcard-div3">
                     <div>
                         <span class='material-symbols-outlined postcard-icon'>favorite</span>
+                        <p>12</p>
                     </div>
                     <div>
                         <span class='material-symbols-outlined postcard-icon'>chat</span>
+                        <p>12</p>
                     </div>
                 </div>
 

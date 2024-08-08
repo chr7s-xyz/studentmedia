@@ -1,0 +1,83 @@
+@import "style.css";
+body{
+    background-color: var(--softBlack)
+
+}
+#login-section{
+    min-height: 30rem;
+    width: 100%;
+    background-color:var(--softBlack);
+color :var(--blue);
+    display: flex;
+    justify-content: center;
+}
+#login-div{
+    width: 50%;
+   min-width: fit-content;
+   background-color: var(--softBlack);
+    border: 2px solid var(--blue);
+    display: flex;
+    flex-direction: column;
+    column-gap: 0.3rem;
+    margin-top: 3rem;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 18rem;
+    justify-content: space-around;
+}
+
+#color-icon{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--softBlack);
+    margin-right: 0.1rem;
+    cursor: pointer;
+}
+.color-icon-pwd{
+   
+    cursor: pointer;
+}
+#heading-section{
+    line-height: 4rem;
+    text-align: center;
+}
+#login-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#user-div,#password-div{
+    display: flex;
+    margin-bottom: 2rem;
+    width: 70%;
+}
+#submit-div{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#login-submit>input{
+    height: 4rem;
+    width: 9rem;
+    font-size: 1.2rem;
+    background-color: var(--blue);
+    color: var(--var(--softBlack)1);
+}
+.redirect-login{
+    padding: 3rem 0;
+}
+.error-div-login{
+    width: 100%;
+    padding: 1rem 0;
+    /* line-height: 3rem; */
+    color: red;
+   
+    justify-content: center;
+}

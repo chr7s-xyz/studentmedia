@@ -1,6 +1,15 @@
 <?php
+
+include($_SERVER['DOCUMENT_ROOT'] . '/studentmedia/php/session.php');
 include ($_SERVER['DOCUMENT_ROOT'] . '/studentmedia/php/function.php');
+if(isset($_SESSION['userID'])){
+    header("Location: ../index.php");
+}
+// if(empty($_SESSION["msg"])){
+//     $_SESSION["msg"]="no";
+// }
 registerForm();
+
 
 ?>
 
@@ -26,10 +35,26 @@ registerForm();
 </head>
 
 <body>
+  
+<!-- to show error after form submission -->
+ <div id="error" class="error-div" style="display:<?php
+ if(isset($_SESSION['msg'])) echo "flex; z-index:10;"; else echo "none;z-index:-1;";;
+ ?>">
+    <div id="main-error">
+        <div class="content">
+            <div class="content-row1">ERROR | REGISTER FORM                <div id="closePopup" onclick="popupClose()">X</div></div>
+            <div class="content-row2"><?php echo $_SESSION["msg"] ?></div>
+        </div>
+    </div>
+ </div>
+
+    
     <div id="register-section">
         <div id="register-div">
 
-            <div id="register-form-title"><h1>REGISTER</h1></div>
+            <div id="register-form-title">
+                <h1>CREATE ACCOUNT | SSFM</h1>
+            </div>
             <div id="register-form">
                 <div id="register-form-data">
                     <form action="../php/form.php?register" method="post" enctype="multipart/form-data">
@@ -37,25 +62,22 @@ registerForm();
                             <div class="name-div register-div">
                                 <span class="material-symbols-outlined span" id="color-icon">image</span>
                                 <input type="text" id="name" class="register-input" name="name" autocomplete="off"
-                                    required placeholder="name" 
-                                   
-                                    />
-                                    <div id="status-name"></div>
+                                    required placeholder="name" />
+                                <div id="status-name"></div>
                             </div>
 
                             <div class="username-div register-div">
                                 <span class="material-symbols-outlined span" id="color-icon">account_circle</span>
                                 <input type="text" id="username" class="register-input" name="username"
-                                    autocomplete="off" required placeholder="username" 
-                                  />
-                                    <div id="status-username">
-                                  
-                                    </div>
+                                    autocomplete="off" required placeholder="username" />
+                                <div id="status-username">
+
+                                </div>
                             </div>
 
                             <div class="email-div register-div">
                                 <span class="material-symbols-outlined span" id="color-icon">mail</span>
-                                <input type="text" id="email" class="register-input" name="email" autocomplete="off"
+                                <input type="email" id="email" class="register-input" name="email" autocomplete="off"
                                     required placeholder="email" />
                             </div>
 
@@ -65,7 +87,8 @@ registerForm();
                                 <div class="password-inside">
                                     <input type="password" id="password" class="register-input" name="password"
                                         autocomplete="off" required placeholder="password" />
-                                    <div onclick="togglePassword()"> <span class="material-symbols-outlined span"
+                                    <div onclick="togglePassword()"> <span
+                                            class="material-symbols-outlined span color-icon-pwd"
                                             id="color-icon">visibility</span></div>
                                 </div>
                             </div>
@@ -75,7 +98,8 @@ registerForm();
                                 <div class="password-inside">
                                     <input type="password" id="confirmPassword" class="register-input"
                                         name="confirmPassword" required placeholder="confirm password" />
-                                    <div onclick="togglePassword2()"> <span class="material-symbols-outlined span"
+                                    <div onclick="togglePassword2()"> <span
+                                            class="material-symbols-outlined span color-icon-pwd"
                                             id="color-icon">visibility</span></div>
                                 </div>
                             </div>
@@ -111,13 +135,13 @@ registerForm();
 
                             <div id="action-div">
                                 <div class="action-inputs">
-                                <div id="register-submit"><input type="submit" class="submitUser" value="Create User"
-                                        name="submitUserForm" /></div>
+                                    <div id="register-submit"><input type="submit" class="submitUser"
+                                            value="Create User" name="submitUserForm" /></div>
 
-                                <div id="register-reset"><input type="reset" class="resetUser" value="Reset"
-                                        name="resetForm" /></div>
+                                    <div id="register-reset"><input type="reset" class="resetUser" value="Reset"
+                                            name="resetForm" /></div>
                                 </div>
-                               
+
                                 <div class="redirect-login">
                                     Already have an account? <a href="./login.php">Login here</a> ....
                                 </div>
@@ -136,6 +160,7 @@ registerForm();
 
 
     <script src="../js/index.js"></script>
+
 </body>
 
 </html>
